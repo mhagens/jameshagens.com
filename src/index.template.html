@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FDBLYNQPXB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FDBLYNQPXB');
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>James Hagens | Boston Bruins #44 Center: Stats, Bio &amp; Jersey</title>
@@ -454,5 +463,11 @@ footer a{color:var(--white)}
     <div class="credit">Website powered by <a href="https://hagensmedia.com" rel="noopener">hagensmedia.com</a></div>
   </div>
 </footer>
+<script>
+  // Count jersey button clicks in Google Analytics
+  document.querySelectorAll('a[href="/jersey/"]').forEach(function (a) {
+    a.addEventListener('click', function () { gtag('event', 'jersey_click', { link_text: a.textContent.trim() }); });
+  });
+</script>
 </body>
 </html>
