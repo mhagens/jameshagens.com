@@ -3,8 +3,11 @@
 import { chromium } from "playwright";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
+import { readFile } from "node:fs/promises";
 
 const site = path.join(path.dirname(path.dirname(fileURLToPath(import.meta.url))), "site");
+// Uses site/img/james-hagens.jpg on the share image when present.
+const photo = await readFile(path.join(site, "img", "james-hagens.jpg")).then(b => `data:image/jpeg;base64,${b.toString("base64")}`, () => null);
 const fonts = `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@800&family=Libre+Franklin:wght@700&family=JetBrains+Mono:wght@600&display=swap">`;
 
 const og = `${fonts}<style>
@@ -16,9 +19,10 @@ body{margin:0;width:1200px;height:630px;color:#0f1a24;font-family:"Libre Frankli
 .e{font:600 26px/1 "JetBrains Mono",monospace;color:#c8102e;letter-spacing:.06em}
 h1{font:800 200px/.84 "Saira Condensed",Impact,sans-serif;text-transform:uppercase;margin:22px 0 0}
 h1 span{color:#0b3d91}
+.photo{position:absolute;right:70px;top:44px;width:340px;height:425px;object-fit:cover;border:10px solid #fff;border-bottom:8px solid #c8102e;box-shadow:0 14px 34px rgba(15,26,36,.25)}
 .bar{position:absolute;left:0;right:0;bottom:0;height:96px;background:#0f1a24;display:flex;align-items:center;gap:22px;padding:0 80px;color:#fff;font:800 34px/1 "Saira Condensed",sans-serif;letter-spacing:.12em;text-transform:uppercase}
 .bar b{background:#fcb514;color:#0f1a24;padding:6px 12px}
-</style><div class="ring"></div><div class="c"><div class="e">BOS · C · #44 · SHOOTS L</div><h1>James<br><span>Hagens</span></h1></div><div class="bar"><b>44</b>Boston Bruins · jameshagens.com</div>`;
+</style>${photo ? `<img class="photo" src="${photo}">` : `<div class="ring"></div>`}<div class="c"><div class="e">BOS · C · #44 · SHOOTS L</div><h1>James<br><span>Hagens</span></h1></div><div class="bar"><b>44</b>Boston Bruins · jameshagens.com</div>`;
 
 const icon = size => `${fonts}<style>body{margin:0;width:${size}px;height:${size}px;background:#0f1a24;display:grid;place-items:center}
 b{font:800 ${Math.round(size * 0.62)}px/1 "Saira Condensed",Impact,sans-serif;color:#fcb514}</style><b>44</b>`;

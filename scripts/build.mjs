@@ -82,6 +82,7 @@ const heroPhoto = hasPhoto
 
 const vars = {
   HERO_PHOTO: heroPhoto,
+  PERSON_IMAGE: `${config.siteUrl}/${hasPhoto ? "img/james-hagens.jpg" : "og-image.png"}`,
   SITE_URL: config.siteUrl,
   CONTACT_URL: config.contactUrl,
   SEASON_LABEL: seasonLabel,
