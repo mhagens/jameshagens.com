@@ -1,0 +1,40 @@
+name: Update stats
+
+on:
+  schedule:
+    # Hourly, plus every 15 minutes during evening game windows (ET)
+    - cron: "7 * * * *"
+    - cron: "*/15 23,0,1,2,3,4 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["src/**", "scripts/**", "config.json"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-stats
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build site with latest NHL stats
+        run: node scripts/build.mjs
+      - name: Commit changes
+        run: |
+          if git diff --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+          git config user.name "stats-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A site data
+          git commit -m "Update stats"
+          git push

@@ -1,0 +1,11 @@
+{
+  "name": "James Hagens",
+  "short_name": "Hagens 44",
+  "icons": [
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ],
+  "theme_color": "#0d0d0c",
+  "background_color": "#0d0d0c",
+  "display": "browser"
+}
