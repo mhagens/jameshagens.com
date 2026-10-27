@@ -8,7 +8,7 @@
 <link rel="canonical" href="{{SITE_URL}}/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="James Hagens">
-<meta name="theme-color" content="#0d0d0c">
+<meta name="theme-color" content="#0f1a24">
 
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="James Hagens">
@@ -34,7 +34,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Libre+Franklin:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;800&family=Libre+Franklin:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap">
 
 <script type="application/ld+json">
 {
@@ -149,127 +149,139 @@
 </script>
 
 <style>
+/* Scoreboard design: ice-white rink, navy scoreboard with gold LED digits, Bruins gold and goal-light red accents */
 :root{
-  --bg:#0d0d0c; --panel:#171715; --line:#2a2a27; --fg:#f2efe6; --soft:#cfcbbf; --dim:#8d8a80; --gold:#fcb514; --gold-ink:#0d0d0c;
-  --display:"Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --ice:#eef3f6; --white:#ffffff; --ink:#0f1a24; --soft:#3c4a57; --dim:#5b6b79; --line:#d4dde4;
+  --board:#0f1a24; --board-line:#22303d; --board-dim:#a9b6c2;
+  --red:#c8102e; --blue:#0b3d91; --gold:#fcb514;
+  --display:"Saira Condensed", "Arial Narrow", Impact, sans-serif;
   --body:"Libre Franklin", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
   --pad:clamp(16px,4vw,48px);
-  color-scheme:dark;
+  color-scheme:light;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--ice);color:var(--ink);font:400 16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
 a{color:inherit}
-a:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
 .wrap{max-width:1200px;margin:0 auto;padding-left:max(var(--pad),env(safe-area-inset-left,0px));padding-right:max(var(--pad),env(safe-area-inset-right,0px))}
-.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;background:var(--gold);color:var(--gold-ink);padding:8px 12px;z-index:9}
-.eyebrow{font:700 12px/1 var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;background:var(--gold);color:var(--ink);padding:8px 12px;z-index:9}
+.eyebrow{font:600 13px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
 h1,h2,h3{text-wrap:balance}
-h2{font:900 clamp(40px,6vw,64px)/.95 var(--display);text-transform:uppercase;margin:10px 0 24px;letter-spacing:.01em}
+h2{font:800 clamp(40px,6vw,68px)/.92 var(--display);text-transform:uppercase;margin:10px 0 24px;letter-spacing:-.005em}
 section{padding-block:clamp(48px,8vw,96px);border-top:1px solid var(--line)}
-.btn{display:inline-block;padding:15px 22px;font:900 16px/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:transform .15s ease}
+section:nth-of-type(even){background:var(--white)}
+.btn{display:inline-block;padding:14px 22px;font:800 17px/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:transform .15s ease}
 .btn:hover{transform:translateY(-1px)}
-.btn.primary{background:var(--gold);color:var(--gold-ink)}
-.btn.ghost{border:1px solid #4a4840}
+.btn.primary{background:var(--red);color:var(--white)}
+.btn.ghost{border:2px solid var(--ink);color:var(--ink)}
 
 /* nav */
-.top{position:sticky;top:0;z-index:5;background:rgba(13,13,12,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top{position:sticky;top:0;z-index:5;background:var(--board);color:var(--white)}
 .top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:14px}
-.logo{font:900 24px/1 var(--display);letter-spacing:.05em;text-decoration:none}
-.logo span{color:var(--gold)}
-.top nav ul{display:flex;gap:clamp(12px,2.5vw,28px);list-style:none;margin:0;padding:0;font-size:14px}
-.top nav a{text-decoration:none;color:var(--soft)}.top nav a:hover{color:var(--fg)}
-.top nav .shop{color:var(--gold);font-weight:700}
+.logo{font:800 21px/1 var(--display);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo span{background:var(--gold);color:var(--board);padding:3px 7px}
+.top nav ul{display:flex;gap:clamp(12px,2.5vw,28px);list-style:none;margin:0;padding:0;font:600 14px/1 var(--display);letter-spacing:.12em;text-transform:uppercase}
+.top nav a{text-decoration:none;color:var(--board-dim)}.top nav a:hover{color:var(--white)}
+.top nav .shop{color:var(--gold)}
 
-/* hero */
-.hero{position:relative;overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:center;padding-block:clamp(40px,7vw,88px)}
-.bignum{position:absolute;right:-3vw;top:50%;transform:translateY(-50%);font:900 clamp(260px,40vw,560px)/.8 var(--display);color:transparent;-webkit-text-stroke:2px #2b2a24;pointer-events:none;user-select:none}
-.hero h1{font:900 clamp(72px,12vw,152px)/.84 var(--display);text-transform:uppercase;margin:14px 0 20px;letter-spacing:.005em}
-.hero .lede{max-width:48ch;color:var(--soft);font-size:clamp(16px,1.6vw,18px);margin:0 0 28px}
+/* hero: rink markings behind the name */
+.hero{position:relative;overflow:hidden;
+  background:
+    linear-gradient(90deg,transparent calc(50% - 4px),rgba(200,16,46,.16) calc(50% - 4px),rgba(200,16,46,.16) calc(50% + 4px),transparent calc(50% + 4px)),
+    linear-gradient(90deg,transparent 22%,rgba(11,61,145,.13) 22%,rgba(11,61,145,.13) 23.4%,transparent 23.4%,transparent 76.6%,rgba(11,61,145,.13) 76.6%,rgba(11,61,145,.13) 78%,transparent 78%),
+    var(--ice)}
+.hero::after{content:"";position:absolute;right:max(-120px,-8vw);top:50%;width:clamp(280px,38vw,480px);aspect-ratio:1;transform:translateY(-50%);border-radius:50%;border:6px solid rgba(200,16,46,.22);
+  background:radial-gradient(circle,rgba(200,16,46,.28) 0 14px,transparent 15px);pointer-events:none}
+.hero .wrap{position:relative;z-index:1;padding-block:clamp(40px,7vw,88px) clamp(32px,5vw,56px)}
+.hero .tag{font:600 14px/1 var(--mono);color:var(--red);letter-spacing:.06em}
+.hero h1{font:800 clamp(72px,12.5vw,160px)/.84 var(--display);text-transform:uppercase;margin:14px 0 22px;letter-spacing:-.01em}
+.hero h1 span{color:var(--blue)}
+.hero .lede{max-width:52ch;color:var(--soft);font-size:clamp(16px,1.6vw,18px);margin:0 0 28px}
 .hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
-.card44{position:relative;z-index:1;aspect-ratio:4/5;max-width:100%;background:linear-gradient(160deg,#24221c,#121211 70%);border-bottom:5px solid var(--gold);display:grid;place-items:center;overflow:hidden}
-.card44 img{width:100%;height:100%;object-fit:cover}
-.card44 .jersey{font:900 clamp(140px,22vw,260px)/1 var(--display);color:var(--gold);letter-spacing:-.02em}
-.card44 .name{position:absolute;top:14%;font:900 clamp(22px,3vw,34px)/1 var(--display);letter-spacing:.3em;color:var(--fg);text-transform:uppercase}
 
-/* facts */
-.facts{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.facts div{padding:20px clamp(12px,2vw,24px);border-right:1px solid var(--line)}
+/* quick facts */
+.facts{display:grid;grid-template-columns:repeat(5,1fr);background:var(--white);border:1px solid var(--line);margin-bottom:clamp(32px,5vw,56px)}
+.facts div{padding:18px clamp(12px,2vw,22px);border-right:1px solid var(--line)}
 .facts div:last-child{border-right:0}
-.facts b{display:block;font:900 clamp(26px,3vw,34px)/1 var(--display);color:var(--gold)}
-.facts span{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.facts b{display:block;font:800 clamp(24px,2.8vw,32px)/1 var(--display);text-transform:uppercase}
+.facts span{font:400 12px/1.4 var(--mono);color:var(--dim)}
 
-/* stats */
-.board{display:grid;grid-template-columns:repeat(6,1fr);background:var(--panel);border:1px solid var(--line)}
-.board div{padding:22px 10px;text-align:center;border-right:1px solid var(--line)}
+/* scoreboard */
+.board{display:grid;grid-template-columns:repeat(6,1fr);background:var(--board);border-radius:8px;overflow:hidden;box-shadow:inset 0 0 0 4px var(--board-line),0 12px 30px rgba(15,26,36,.18)}
+.board div{padding:22px 10px;text-align:center;border-right:1px solid var(--board-line)}
 .board div:last-child{border-right:0}
-.board b{display:block;font:900 clamp(38px,5vw,60px)/1 var(--display);color:var(--gold);font-variant-numeric:tabular-nums}
-.board span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
-.asof{font-size:13px;color:var(--dim);margin:12px 0 36px}
-.asof a{color:var(--soft)}
-.tablewrap{overflow-x:auto;border:1px solid var(--line)}
+.board b{display:block;font:600 clamp(36px,5vw,58px)/1 var(--mono);color:var(--gold);font-variant-numeric:tabular-nums;text-shadow:0 0 14px rgba(252,181,20,.45)}
+.board span{font:600 13px/1 var(--display);letter-spacing:.16em;text-transform:uppercase;color:var(--board-dim)}
+.asof{font:400 12px/1.6 var(--mono);color:var(--dim);margin:14px 0 36px}
+.asof a{color:var(--blue)}
+.tablewrap{overflow-x:auto;background:var(--white);border:1px solid var(--line)}
 table{border-collapse:collapse;width:100%;min-width:560px;font-variant-numeric:tabular-nums}
-caption{text-align:left;font:900 22px/1 var(--display);text-transform:uppercase;letter-spacing:.04em;padding:16px;background:var(--panel)}
+caption{text-align:left;font:800 22px/1 var(--display);text-transform:uppercase;letter-spacing:.04em;padding:16px;background:var(--board);color:var(--white)}
 th,td{padding:12px 16px;text-align:right;border-top:1px solid var(--line)}
-th{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);font-weight:500}
+td{font-family:var(--mono);font-size:14px}
+th{font:600 13px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
 th:first-child,td:first-child,th:nth-child(2),td:nth-child(2){text-align:left}
 
 /* bio */
 .bio{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,64px)}
 .bio p{color:var(--soft);margin:0 0 18px;max-width:62ch}
-.bio p strong{color:var(--fg)}
+.bio p strong{color:var(--ink)}
 
 /* timeline */
-.timeline{list-style:none;margin:0;padding:0;display:grid;gap:0}
-.timeline li{display:grid;grid-template-columns:130px 1fr;gap:24px;padding:20px 0;border-top:1px solid var(--line)}
-.timeline time{font:900 24px/1.1 var(--display);color:var(--gold)}
+.timeline{list-style:none;margin:0;padding:0;display:grid}
+.timeline li{display:grid;grid-template-columns:140px 1fr;gap:24px;padding:20px 0;border-top:1px solid var(--line)}
+.timeline time{font:800 26px/1.05 var(--display);color:var(--blue);text-transform:uppercase}
 .timeline h3{margin:0 0 4px;font:700 17px/1.3 var(--body)}
 .timeline p{margin:0;color:var(--soft);max-width:68ch}
 
 /* honors */
 .honors{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-.honors div{background:var(--bg);padding:20px}
-.honors b{display:block;font:900 22px/1.1 var(--display);text-transform:uppercase;letter-spacing:.02em;margin-bottom:6px}
-.honors span{color:var(--dim);font-size:14px}
+.honors div{background:var(--white);padding:20px}
+.honors b{display:block;font:800 23px/1.05 var(--display);text-transform:uppercase;margin-bottom:6px}
+.honors span{font:400 12px/1.5 var(--mono);color:var(--dim)}
 
-/* jersey band */
-.jerseyband{background:var(--gold);color:var(--gold-ink);border-top:0}
+/* jersey band (goal-light red) */
+.jerseyband{background:var(--red)!important;color:var(--white);border-top:0}
 .jerseyband .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
 .jerseyband h2{margin:0}
 .jerseyband p{margin:6px 0 0;max-width:52ch}
-.jerseyband .btn{background:var(--gold-ink);color:var(--gold)}
+.jerseyband .btn{background:var(--white);color:var(--red)}
 
 /* faq */
 .faq details{border-top:1px solid var(--line);padding:18px 0}
 .faq details:last-child{border-bottom:1px solid var(--line)}
 .faq summary{cursor:pointer;font:700 18px/1.4 var(--body);list-style:none;display:flex;justify-content:space-between;gap:16px}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";color:var(--gold);font:900 26px/1 var(--display)}
+.faq summary::after{content:"+";color:var(--red);font:800 28px/1 var(--display)}
 .faq details[open] summary::after{content:"–"}
 .faq p{color:var(--soft);margin:10px 0 0;max-width:70ch}
+.faq a{color:var(--blue)}
 
 /* contact + footer */
 .contact .wrap{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
 .contact p{color:var(--soft);margin:0;max-width:56ch}
-footer{border-top:1px solid var(--line);padding-block:32px 48px;color:var(--dim);font-size:13px}
+footer{background:var(--board);color:var(--board-dim);padding-block:32px 48px;font-size:13px}
 footer .wrap{display:grid;gap:16px}
-footer ul{display:flex;flex-wrap:wrap;gap:8px 20px;list-style:none;margin:0;padding:0}
-footer a{color:var(--soft)}
+footer ul{display:flex;flex-wrap:wrap;gap:8px 20px;list-style:none;margin:0;padding:0;font:600 14px/1 var(--display);letter-spacing:.1em;text-transform:uppercase}
+footer a{color:var(--white)}
+.credit{font-size:10px;opacity:.6;letter-spacing:.02em}
+.credit a{color:inherit}
 
 @media (max-width:860px){
   .top nav li:not(.keep){display:none}
-  .hero .wrap,.bio{grid-template-columns:1fr}
-  .card44{aspect-ratio:16/10}
-  .facts{grid-template-columns:repeat(3,1fr)}
-  .facts div:nth-child(3){border-right:0}
-  .facts div:nth-child(n+4){border-top:1px solid var(--line)}
+  .bio,.honors{grid-template-columns:1fr}
+  .hero::after{opacity:.5}
+  .facts{grid-template-columns:repeat(2,1fr)}
+  .facts div:nth-child(2n){border-right:0}
+  .facts div:nth-child(n+3){border-top:1px solid var(--line)}
+  .facts div:last-child{grid-column:1/-1}
   .board{grid-template-columns:repeat(3,1fr)}
   .board div:nth-child(3){border-right:0}
-  .board div:nth-child(n+4){border-top:1px solid var(--line)}
+  .board div:nth-child(n+4){border-top:1px solid var(--board-line)}
   .timeline li{grid-template-columns:1fr;gap:6px}
-  .honors{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -294,20 +306,13 @@ footer a{color:var(--soft)}
 
 <main id="main">
   <div class="hero">
-    <div class="bignum" aria-hidden="true">44</div>
     <div class="wrap">
-      <div style="position:relative;z-index:1">
-        <div class="eyebrow">Center · #44 · Boston Bruins</div>
-        <h1>James Hagens</h1>
-        <p class="lede">James Hagens is a center for the Boston Bruins. The Hauppauge, New York native was drafted seventh overall in 2025 after starring for the U.S. National Team Development Program and Boston College, where he was a First-Team All-American.</p>
-        <div class="ctas">
-          <a class="btn primary" href="/jersey/" rel="nofollow">Shop the #44 jersey</a>
-          <a class="btn ghost" href="#stats">Live stats</a>
-        </div>
-      </div>
-      <div class="card44" role="img" aria-label="Bruins number 44 jersey graphic">
-        <div class="name">Hagens</div>
-        <div class="jersey">44</div>
+      <div class="tag">BOS · C · #44 · SHOOTS L</div>
+      <h1>James <span>Hagens</span></h1>
+      <p class="lede">James Hagens is a center for the Boston Bruins. The Hauppauge, New York native was drafted seventh overall in 2025 after starring for the U.S. National Team Development Program and Boston College, where he was a First-Team All-American.</p>
+      <div class="ctas">
+        <a class="btn primary" href="/jersey/" rel="nofollow">Shop the #44 jersey</a>
+        <a class="btn ghost" href="#stats">Live stats</a>
       </div>
     </div>
   </div>
@@ -433,6 +438,7 @@ footer a{color:var(--soft)}
       <li><a href="https://www.hockey-reference.com/players/h/hagenja01.html" rel="noopener">Hockey-Reference</a></li>
     </ul>
     <div>© <span>{{YEAR}}</span> James Hagens. Stats courtesy of NHL.com. Boston Bruins and NHL names and marks belong to their owners; this site is not operated by the NHL or the Boston Bruins.</div>
+    <div class="credit">Website powered by <a href="https://hagensmedia.com" rel="noopener">hagensmedia.com</a></div>
   </div>
 </footer>
 </body>

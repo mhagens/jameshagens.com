@@ -101,8 +101,8 @@ await writeFile(p("site", "jersey", "index.html"), `<!doctype html>
 <meta name="robots" content="noindex, follow">
 <meta http-equiv="refresh" content="0; url=${jersey}">
 <link rel="canonical" href="${config.siteUrl}/">
-</head><body style="font-family:system-ui;background:#0d0d0c;color:#f2efe6;padding:24px">
-<p>Taking you to the NHL Shop… <a href="${jersey}" style="color:#fcb514">Continue to the James Hagens jersey</a></p>
+</head><body style="font-family:system-ui;background:#eef3f6;color:#0f1a24;padding:24px">
+<p>Taking you to the NHL Shop… <a href="${jersey}" style="color:#c8102e">Continue to the James Hagens jersey</a></p>
 </body></html>
 `);
 

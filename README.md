@@ -61,4 +61,4 @@ Edit `jerseyUrl` in `config.json`. Every "Shop" button goes through `/jersey/`, 
 2. Check the structured data with Google's [Rich Results Test](https://search.google.com/test/rich-results).
 3. Ask for links from places Google trusts: James's social bios, the agency's client page, and his Wikipedia infobox ("website" field) once the site is live.
 4. Add James's official social accounts to `sameAs` in the template's JSON-LD.
-5. Add a licensed photo (see the `.card44` block in the template) and give it descriptive alt text.
+5. Add a licensed action photo with descriptive alt text (for example "James Hagens skating for the Boston Bruins") when you have one.
