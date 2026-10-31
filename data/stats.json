@@ -1,11 +1,11 @@
 {
-  "fetchedAt": "2026-10-30T05:28:19.876Z",
+  "fetchedAt": "2026-10-31T23:15:59.658Z",
   "season": 20262027,
   "regularSeason": {
-    "gamesPlayed": 14,
+    "gamesPlayed": 15,
     "goals": 5,
-    "assists": 5,
-    "points": 10,
+    "assists": 6,
+    "points": 11,
     "plusMinus": 6,
     "shots": 27,
     "pim": 4,
@@ -13,12 +13,23 @@
     "gameWinningGoals": 0
   },
   "career": {
-    "gamesPlayed": 16,
+    "gamesPlayed": 17,
     "goals": 5,
-    "assists": 6,
-    "points": 11
+    "assists": 7,
+    "points": 12
   },
   "last5Games": [
+    {
+      "gameDate": "2026-10-31",
+      "opponentAbbrev": "CHI",
+      "homeRoadFlag": "H",
+      "goals": 0,
+      "assists": 1,
+      "points": 1,
+      "plusMinus": 0,
+      "shots": 0,
+      "toi": "13:02"
+    },
     {
       "gameDate": "2026-10-29",
       "opponentAbbrev": "STL",
@@ -62,17 +73,6 @@
       "plusMinus": 0,
       "shots": 4,
       "toi": "15:04"
-    },
-    {
-      "gameDate": "2026-10-20",
-      "opponentAbbrev": "DAL",
-      "homeRoadFlag": "R",
-      "goals": 1,
-      "assists": 0,
-      "points": 1,
-      "plusMinus": 1,
-      "shots": 2,
-      "toi": "13:20"
     }
   ]
 }
