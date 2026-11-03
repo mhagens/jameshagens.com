@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-03T03:45:40.462Z",
+  "fetchedAt": "2026-11-03T10:42:03.274Z",
   "season": 20262027,
   "regularSeason": {
     "gamesPlayed": 16,
@@ -13,10 +13,10 @@
     "gameWinningGoals": 0
   },
   "career": {
-    "gamesPlayed": 17,
-    "goals": 5,
+    "gamesPlayed": 18,
+    "goals": 6,
     "assists": 7,
-    "points": 12
+    "points": 13
   },
   "last5Games": [
     {
