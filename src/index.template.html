@@ -215,7 +215,7 @@ section:nth-of-type(even){background:var(--white)}
 .hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
 .hero .wrap:has(.hero-photo){grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr)}
 .hero-photo{margin:0;background:var(--white);padding:10px 10px 0;box-shadow:0 12px 30px rgba(15,26,36,.18);border-bottom:6px solid var(--red)}
-.hero-photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.hero-photo img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:center 30%}
 .hero-photo figcaption{font:400 11px/1 var(--mono);color:var(--dim);padding:8px 0}
 
 /* quick facts */
@@ -300,6 +300,22 @@ footer a{color:var(--white)}
   .board div:nth-child(n+4){border-top:1px solid var(--board-line)}
   .timeline li{grid-template-columns:1fr;gap:6px}
 }
+
+/* section photos */
+.pframe{margin:0;background:var(--white);padding:10px;box-shadow:0 12px 30px rgba(15,26,36,.16);border-bottom:6px solid var(--red)}
+.pframe img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover}
+.pframe figcaption{font:400 11px/1.3 var(--mono);color:var(--dim);padding:8px 0 0}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);gap:clamp(24px,4vw,56px);align-items:start}
+.split.left{grid-template-columns:minmax(0,340px) minmax(0,1fr)}
+.split .pframe{position:sticky;top:90px}
+.bio.stack{grid-template-columns:1fr}
+.honors-split{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px;align-items:start}
+.honors-split .honors{grid-template-columns:1fr 1fr}
+.jerseyband .wrap{flex-wrap:nowrap}
+.jb-photo{flex:0 0 220px;margin:-20px 0 -20px auto;align-self:center;border:8px solid var(--white);box-shadow:0 12px 30px rgba(0,0,0,.25)}
+.jb-photo img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover}
+.contact .pframe{width:min(260px,100%)}
+@media (max-width:860px){.split,.split.left{grid-template-columns:1fr}.split .pframe{position:static;max-width:420px}.honors-split .honors{grid-template-columns:1fr}.jerseyband .wrap{flex-wrap:wrap}.jb-photo{flex-basis:160px;margin:0}}
 </style>
 </head>
 <body>
@@ -353,7 +369,7 @@ footer a{color:var(--white)}
       <h2>James Hagens stats</h2>
 {{STATS_BOARD}}
       <p class="asof">Updated <time datetime="{{UPDATED_ISO}}">{{UPDATED_HUMAN}}</time> from NHL.com stats. NHL career: {{CAREER_LINE}}. <a href="https://www.nhl.com/bruins/player/james-hagens-8485395/stats" rel="noopener">Full stats on NHL.com</a></p>
-      <div class="tablewrap">
+      <div class="split"><div class="tablewrap">
         <table>
           <caption>Last 5 games</caption>
           <thead><tr><th scope="col">Date</th><th scope="col">Opponent</th><th scope="col">G</th><th scope="col">A</th><th scope="col">P</th><th scope="col">+/-</th><th scope="col">SOG</th><th scope="col">TOI</th></tr></thead>
@@ -361,7 +377,7 @@ footer a{color:var(--white)}
 {{LAST5_ROWS}}
           </tbody>
         </table>
-      </div>
+      </div><figure class="pframe"><img src="/img/hagens-2.jpg" alt="James Hagens fist-bumps the Bruins bench after a goal" width="900" height="1200" loading="lazy" style="object-position:center 35%"><figcaption>Bench celebration</figcaption></figure></div>
     </div>
   </section>
 
@@ -369,7 +385,7 @@ footer a{color:var(--white)}
     <div class="wrap">
       <div class="eyebrow">About</div>
       <h2>Who is James Hagens?</h2>
-      <div class="bio">
+      <div class="split"><div class="bio stack">
         <div>
           <p><strong>James Hagens</strong> (born November 3, 2006) is an American professional ice hockey center for the <strong>Boston Bruins</strong> of the National Hockey League. He grew up in Hauppauge, on Long Island, and shoots left.</p>
           <p>Hagens came through the <strong>U.S. National Team Development Program</strong>, where he set a World U-17 Hockey Challenge record with 21 points and was named MVP of the 2024 IIHF World U18 Championship after a tournament-record 22 points.</p>
@@ -378,7 +394,7 @@ footer a{color:var(--white)}
           <p>At <strong>Boston College</strong> he scored 84 points in 71 games over two seasons. As a sophomore in 2025-26 he led the Eagles with 23 goals and 47 points, won the Hockey East scoring title and the Beanpot MVP, and was named a First-Team All-American and a Hobey Baker top-10 finalist.</p>
           <p>The Bruins drafted him seventh overall in 2025 and signed him to a three-year entry-level contract in April 2026. He wears <strong>#44</strong> because the Bruins retired #4 for Bobby Orr.</p>
         </div>
-      </div>
+      </div><figure class="pframe"><img src="/img/hagens-3.jpg" alt="James Hagens arrives at TD Garden in a pinstripe suit" width="900" height="1200" loading="lazy" style="object-position:center 20%"><figcaption>Game-day arrival at TD Garden</figcaption></figure></div>
     </div>
   </section>
 
@@ -386,14 +402,14 @@ footer a{color:var(--white)}
     <div class="wrap">
       <div class="eyebrow">Career</div>
       <h2>From Long Island to TD Garden</h2>
-      <ol class="timeline">
+      <div class="split left"><figure class="pframe"><img src="/img/hagens-4.jpg" alt="James Hagens stands for the anthem with a Bruins teammate" width="900" height="1200" loading="lazy" style="object-position:70% 20%"><figcaption>Anthem at TD Garden</figcaption></figure><ol class="timeline">
         <li><time datetime="2022">2022-24</time><div><h3>U.S. National Team Development Program</h3><p>World U-17 Challenge gold (2022), World U18 gold (2023) and silver (2024, tournament MVP). BioSteel All-American Game MVP in 2024.</p></div></li>
         <li><time datetime="2024">2024-25</time><div><h3>Boston College, freshman</h3><p>11 goals and 37 points. Hockey East All-Rookie Team. Gold medal with Team USA at the 2025 World Junior Championship.</p></div></li>
         <li><time datetime="2025-06">June 2025</time><div><h3>Drafted 7th overall by Boston</h3><p>Selected by the Bruins in the first round of the 2025 NHL Draft.</p></div></li>
         <li><time datetime="2025">2025-26</time><div><h3>Boston College, sophomore</h3><p>23 goals and 47 points to lead the team. Hockey East scoring champion, First Team All-Star, Beanpot MVP, AHCA East First-Team All-American and Hobey Baker top-10 finalist.</p></div></li>
         <li><time datetime="2026-04-12">April 2026</time><div><h3>Signs with the Bruins, NHL debut</h3><p>Turned pro with AHL Providence in March, signed a three-year entry-level contract on April 8 and made his NHL debut on April 12 against Columbus, recording an assist.</p></div></li>
         <li><time datetime="2026-10">2026-27</time><div><h3>Rookie season in Boston</h3><p>Plays on a shutdown line with Elias Lindholm and Casey Mittelstadt and was tied for the NHL rookie scoring lead in late October.</p></div></li>
-      </ol>
+      </ol></div>
     </div>
   </section>
 
@@ -401,14 +417,14 @@ footer a{color:var(--white)}
     <div class="wrap">
       <div class="eyebrow">Honors</div>
       <h2>Awards &amp; medals</h2>
-      <div class="honors">
+      <div class="honors-split"><div class="honors">
         <div><b>First-Team All-American</b><span>AHCA East, 2026</span></div>
         <div><b>Hockey East scoring champion</b><span>Boston College, 2026</span></div>
         <div><b>Beanpot MVP</b><span>Boston College, 2026</span></div>
         <div><b>Hobey Baker top 10</b><span>2026 finalist</span></div>
         <div><b>World Junior gold</b><span>Team USA, 2025</span></div>
         <div><b>World U18 MVP</b><span>Tournament-record 22 points, 2024</span></div>
-      </div>
+      </div><figure class="pframe"><img src="/img/hagens-6.jpg" alt="James Hagens skates in to celebrate a Bruins goal at TD Garden" width="900" height="1200" loading="lazy" style="object-position:80% 60%"><figcaption>Joining a goal celebration</figcaption></figure></div>
     </div>
   </section>
 
@@ -418,6 +434,7 @@ footer a{color:var(--white)}
         <h2 id="jersey-h">Wear #44</h2>
         <p>Official Boston Bruins James Hagens jerseys, home and away, at the NHL Shop.</p>
       </div>
+      <figure class="jb-photo"><img src="/img/hagens-1b.jpg" alt="James Hagens lines up for a faceoff in his #44 Bruins jersey" width="900" height="1200" loading="lazy" style="object-position:center 30%"></figure>
       <a class="btn" href="/jersey/" rel="nofollow">Shop at NHL Shop</a>
     </div>
   </section>
@@ -443,6 +460,7 @@ footer a{color:var(--white)}
         <h2>Media &amp; partnerships</h2>
         <p>Follow James on Instagram. For media requests, appearances, autographs and partnerships, contact his agency, The OT Sports Group.</p>
       </div>
+      <figure class="pframe"><img src="/img/hagens-5.jpg" alt="James Hagens relaxes with a Bruins teammate at the rink" width="900" height="1200" loading="lazy" style="object-position:center 40%"><figcaption>Off the ice</figcaption></figure>
       <div class="ctas" style="display:flex;gap:12px;flex-wrap:wrap">
         <a class="btn ghost" href="https://www.instagram.com/jameshagens_4/" rel="noopener me">Instagram @jameshagens_4</a>
         <a class="btn primary" href="{{CONTACT_URL}}" rel="noopener">Contact The OT Sports Group</a>

@@ -73,11 +73,11 @@ const board = [
 const rows = stats.last5Games.map(g => `            <tr><td>${shortDate(g.gameDate)}</td><td>${g.homeRoadFlag === "H" ? "vs" : "@"} ${esc(g.opponentAbbrev)}</td><td>${g.goals}</td><td>${g.assists}</td><td>${g.points}</td><td>${signed(g.plusMinus)}</td><td>${g.shots}</td><td>${esc(g.toi)}</td></tr>`).join("\n")
   || `            <tr><td colspan="8">No games played yet this season.</td></tr>`;
 
-// Drop a photo at site/img/james-hagens.jpg (4:5 portrait works best) and it appears in the hero.
+// Drop a photo at site/img/james-hagens.jpg (3:4 portrait, 900x1200 works best) and it appears in the hero.
 const photoPath = p("site", "img", "james-hagens.jpg");
 const hasPhoto = await access(photoPath).then(() => true, () => false);
 const heroPhoto = hasPhoto
-  ? `      <figure class="hero-photo"><img src="/img/james-hagens.jpg" alt="James Hagens, center for the Boston Bruins" width="800" height="1000" fetchpriority="high"><figcaption>${esc(config.photoCredit || "")}</figcaption></figure>`
+  ? `      <figure class="hero-photo"><img src="/img/james-hagens.jpg" alt="James Hagens celebrates a goal for the Boston Bruins" width="900" height="1200" fetchpriority="high"><figcaption>${esc(config.photoCredit || "")}</figcaption></figure>`
   : "";
 
 const vars = {
