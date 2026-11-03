@@ -1,13 +1,13 @@
 {
-  "fetchedAt": "2026-10-31T23:15:59.658Z",
+  "fetchedAt": "2026-11-03T03:45:40.462Z",
   "season": 20262027,
   "regularSeason": {
-    "gamesPlayed": 15,
-    "goals": 5,
+    "gamesPlayed": 16,
+    "goals": 6,
     "assists": 6,
-    "points": 11,
-    "plusMinus": 6,
-    "shots": 27,
+    "points": 12,
+    "plusMinus": 7,
+    "shots": 30,
     "pim": 4,
     "powerPlayPoints": 1,
     "gameWinningGoals": 0
@@ -19,6 +19,17 @@
     "points": 12
   },
   "last5Games": [
+    {
+      "gameDate": "2026-11-02",
+      "opponentAbbrev": "VGK",
+      "homeRoadFlag": "H",
+      "goals": 1,
+      "assists": 0,
+      "points": 1,
+      "plusMinus": 1,
+      "shots": 3,
+      "toi": "17:27"
+    },
     {
       "gameDate": "2026-10-31",
       "opponentAbbrev": "CHI",
@@ -62,17 +73,6 @@
       "plusMinus": 2,
       "shots": 3,
       "toi": "12:17"
-    },
-    {
-      "gameDate": "2026-10-22",
-      "opponentAbbrev": "NSH",
-      "homeRoadFlag": "H",
-      "goals": 0,
-      "assists": 0,
-      "points": 0,
-      "plusMinus": 0,
-      "shots": 4,
-      "toi": "15:04"
     }
   ]
 }
