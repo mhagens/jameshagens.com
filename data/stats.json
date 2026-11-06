@@ -1,24 +1,35 @@
 {
-  "fetchedAt": "2026-11-03T10:42:03.274Z",
+  "fetchedAt": "2026-11-06T06:13:43.583Z",
   "season": 20262027,
   "regularSeason": {
-    "gamesPlayed": 16,
+    "gamesPlayed": 17,
     "goals": 6,
     "assists": 6,
     "points": 12,
     "plusMinus": 7,
-    "shots": 30,
+    "shots": 34,
     "pim": 4,
     "powerPlayPoints": 1,
     "gameWinningGoals": 0
   },
   "career": {
-    "gamesPlayed": 18,
+    "gamesPlayed": 19,
     "goals": 6,
     "assists": 7,
     "points": 13
   },
   "last5Games": [
+    {
+      "gameDate": "2026-11-05",
+      "opponentAbbrev": "PIT",
+      "homeRoadFlag": "R",
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "plusMinus": 0,
+      "shots": 4,
+      "toi": "11:57"
+    },
     {
       "gameDate": "2026-11-02",
       "opponentAbbrev": "VGK",
@@ -62,17 +73,6 @@
       "plusMinus": 0,
       "shots": 1,
       "toi": "13:31"
-    },
-    {
-      "gameDate": "2026-10-24",
-      "opponentAbbrev": "SJS",
-      "homeRoadFlag": "H",
-      "goals": 1,
-      "assists": 1,
-      "points": 2,
-      "plusMinus": 2,
-      "shots": 3,
-      "toi": "12:17"
     }
   ]
 }
